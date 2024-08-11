@@ -231,3 +231,21 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+/**
+   * Animated Text HERO
+   */
+document.addEventListener("DOMContentLoaded", function() {
+  var textElement = document.getElementById("animated-text");
+  var texts = ["We Make House Calls", "Not Geeks, PROs"];
+  var index = 0;
+
+  setInterval(function() {
+      textElement.style.opacity = 0; // Fade out effect
+      setTimeout(function() {
+          textElement.textContent = texts[index];
+          textElement.style.opacity = 1; // Fade in effect
+          index = (index + 1) % texts.length;
+      }, 500); // Duration matches CSS transition
+  }, 3000); // Change every 3 seconds
+});
